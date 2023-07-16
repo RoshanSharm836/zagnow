@@ -1,38 +1,322 @@
-.App {
+body {
   text-align: center;
+  background: #f9f9f9;
+  font-family: Inter;
+}
+a {
+  text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  width: 100%;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 450px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* SingleProduct start */
+.SingleProduct {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-start;
+  color: #00000099;
+  padding: 0 10px;
+  gap: 10px;
+  margin-bottom: 7rem;
+}
+
+.SingleProduct > img {
+  margin-top: 50px;
+}
+.SingleProduct h3 {
+  color: black;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.SingleProduct p {
+  text-align: start;
+}
+.size {
+  border: 1px solid;
+  padding: 5px 10px;
+}
+.price {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  background-color: aliceblue;
+  justify-content: space-around;
+  width: 100%;
+  padding: 10px;
+}
+.price button {
   color: white;
+  padding: 5px 10px;
+  width: 50%;
+  border-radius: 5px;
+  background-color: black;
+}
+/* SingleProduct end */
+
+/* cart */
+.cart {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.cart img {
+  width: 83px;
+  height: 89px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+.cart_header {
+  display: flex;
+  margin-top: 15px;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 22px;
+  align-items: center;
+}
+.cart_payment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.box {
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+}
+.box_details {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  justify-content: space-around;
+}
+.box_price {
+  display: flex;
+  justify-content: space-between;
+}
+.box_price button {
+  padding: 5px;
+  width: 30px;
+  margin: 0 5px;
+  text-align: center;
+  background-color: #fff;
+}
+.cart-box {
+  max-height: 30vh;
+  overflow: scroll;
+}
+.cart_payment div {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+/* cart end */
+/* form */
+form {
+  display: flex;
+  flex-direction: column;
+  color: #00000099;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form input {
+  padding: 5px;
+  margin: 5px 0;
 }
+.checkout_btm {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  bottom: 10px;
+  width: 90%;
+  margin: auto;
+  background-color: black;
+  color: #fff;
+  padding: 20px;
+  z-index: 100;
+  font-size: 16px;
+  border-radius: 15px;
+}
+
+.Price_spam {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.32px;
+}
+.output {
+  min-height: 150px;
+  width: 95%;
+  margin: auto;
+  border: 1px solid #00000099;
+}
+/* form end */
+
+/* dashboard */
+.dashboard {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 250px 1fr 1fr;
+  grid-template-rows: 100px 250px 1fr;
+  gap: 15px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "dashboard_left dashboard_header dashboard_header"
+    "dashboard_left chart second-chart"
+    "dashboard_left dashboard_list dashboard_list";
+}
+
+.dashboard_left {
+  grid-area: dashboard_left;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  align-items: center;
+  gap: 20px;
+}
+.fz {
+  width: 80%;
+  justify-content: flex-start;
+  margin-left: 60px;
+}
+.dashboard_header {
+  grid-area: dashboard_header;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 90%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  margin: auto;
+  align-items: center;
+}
+.dashboard_header > span {
+  font-size: 24px;
+  font-weight: 600;
+}
+.dashboard_header > button {
+  background: blue;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.chart {
+  grid-area: chart;
+  border-radius: 30.65px;
+  border: 1px solid #eff0f6;
+  background: #fff;
+  box-shadow: 0px 10.220000267028809px 61.29999923706055px 0px
+    rgba(226, 236, 249, 0.5);
+}
+
+.second-chart {
+  grid-area: second-chart;
+  border-radius: 30.65px;
+  border: 1px solid #eff0f6;
+  background: #fff;
+  box-shadow: 0px 10.220000267028809px 61.29999923706055px 0px
+    rgba(226, 236, 249, 0.5);
+}
+.bar {
+  padding: 5px 0;
+  height: 5px;
+  border-radius: 0px 5px 5px 0px;
+}
+.dashboard_list {
+  grid-area: dashboard_list;
+  width: 80%;
+  padding: 20px;
+
+  margin: auto;
+  border-radius: 30.65px;
+  border: 1px solid #eff0f6;
+  background: #fff;
+  box-shadow: 0px 10.220000267028809px 61.29999923706055px 0px
+    rgba(226, 236, 249, 0.5);
+}
+.dashboard_list table {
+  width: 100%;
+  padding: 10px;
+}
+thead > tr {
+  color: #00000099;
+  text-transform: capitalize;
+}
+tbody > tr,
+th {
+  font-weight: 500;
+  text-align: left;
+  font-size: 16px;
+  width: 25%;
+  padding: 10px;
+}
+.dashboard_left > div {
+  padding: 10px 0;
+}
+.dashboard_left > div:hover {
+  color: #1b59f8;
+  background-color: #c7d3f3;
+}
+/* dashboard end */
+/* navbar */
+nav {
+  position: fixed;
+  top: 0;
+  text-transform: capitalize;
+  left: 0;
+  background-color: #fff;
+  z-index: 100;
+  padding: 10px;
+  display: flex;
+  width: 100%;
+  margin: auto;
+  justify-content: space-around;
+}
+/* navbar end */
+/* pagenation */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 10px;
+}
+.pagination button.active {
+  background-color: blue;
+  border: 1px solid #fff;
+  color: #fff;
+  height: 25px;
+  width: 25px;
+}
+.pagination button {
+  height: 25px;
+  width: 25px;
+  border-radius: 4.087px;
+  border: 1.022px solid #eff0f6;
+  background: #f5f5f5;
+}
+
+.pagination button:hover {
+  background-color: blue;
+  color: #fff;
+}
+/* pagenation end */
