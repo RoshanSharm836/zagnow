@@ -65,7 +65,7 @@ export default function Cart({ cartarr }) {
           <div className="text-2xl text-gray-300">Add Item in Cart</div>
         )}
       </div>
-      <div className="cart_payment">
+      <di className="cart_payment">
         <input
           type="text"
           className="border-solid border-2 bg-gray-100 border-gray-100 p-2"
@@ -88,7 +88,7 @@ export default function Cart({ cartarr }) {
           <span className="Price_spam">Total</span>
           <span>INR {total}</span>
         </div>
-      </div>
+      </di>
       <button className="checkout_btm">
         Checkout
         <svg

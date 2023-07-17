@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Context } from "../context/Contextapi.js";
 import { useContext } from "react";
 
@@ -6,18 +6,14 @@ export default function CartItem({ data, key, id, del }) {
   const [count, setCount] = useState(1);
   const { total, setTotal } = useContext(Context);
 
-  // useEffect(() => {
-  //   getamount();
-  // }, [count]);
-
   function counter(c) {
     if (c === "add") {
       setCount(count + 1);
-      // let currentItemTotal = count * data.price;
+      // each time total amount is inc
       setTotal(total + data.price);
     } else {
       setCount(count - 1);
-      // let currentItemTotal = count * data.price;
+      // each time total amount is dec
       setTotal(total - data.price);
     }
   }
@@ -29,7 +25,7 @@ export default function CartItem({ data, key, id, del }) {
           <div className="text-sm text-left w-4/5">{data.title}</div>
           <svg
             onClick={() => {
-              del(id, count, data.price);
+              del(id, count, data.price); // passing datas to delete item form cart and updating the total
             }}
             xmlns="http://www.w3.org/2000/svg"
             width="26"
@@ -47,7 +43,7 @@ export default function CartItem({ data, key, id, del }) {
           </svg>
         </div>
         <div className="text-left py-2" style={{ color: "#00000099" }}>
-          Size {data.selectsize}
+          Size {data.selectsize || "M"}
         </div>
         <div className="box_price">
           <div>INR {data.price}</div>

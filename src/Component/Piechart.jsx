@@ -11,10 +11,13 @@ function Piechart({ lable, c, percentage }) {
       },
     ],
   };
+  var options = {
+    cutout: 50, //  for thickness
+  };
 
   return (
     <section className="pie_box relative " id="pie" style={{ widows: "200px" }}>
-      <Doughnut data={data} style={{ width: "100px" }} />
+      <Doughnut data={data} options={options} style={{ width: "150px" }} />
       <div className="py-3 pielable">{lable}</div>
       <div className="percentage " style={{ color: `${c}` }}>
         {percentage}%

@@ -6,7 +6,7 @@ function App({ data }) {
   return (
     <div className="App">
       <Navbar />
-      <div className="flex justify-between items-center p-4 ">
+      <div className="flex justify-between items-center p-4 container_header">
         <span className="text-3xl font-semibold">Discover</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,10 @@ function App({ data }) {
           />
         </svg>
       </div>
-      <div className="relative flex justify-around items-center p-2">
+      <div
+        className=" 
+  container_search relative flex justify-around items-center p-2"
+      >
         <svg
           className="absolute left-10"
           xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +67,7 @@ function App({ data }) {
           </svg>
         </div>
       </div>
-      <div className="flex justify-between items-center p-4">
+      <div className="container_btm flex justify-between items-center p-4">
         <div className="py-2 px-4 bg-black rounded-lg text-white">All</div>
         <div className="py-2 px-4 bg-gray-100 rounded-lg">Men</div>
         <div className="py-2 px-4 bg-gray-100 rounded-lg"> Women</div>

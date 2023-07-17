@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import Popup from "../Component/Popup";
 
 export default function Form() {
-  const [output, setOutput] = useState();
+  const [output, setOutput] = useState("");
   const [Active, setActive] = useState(false);
   const [loader, setLoader] = useState(false);
   function handle(e) {
@@ -13,6 +13,7 @@ export default function Form() {
     reader.readAsText(file);
     reader.onload = (e) => {
       try {
+        JSON.parse(reader.result);
         setTimeout(() => {
           setOutput(reader.result);
           setLoader(false);
@@ -64,9 +65,18 @@ export default function Form() {
           accept=".json"
           onChange={handle}
         />
-        {loader ? "loadin..." : ""}
+
         <label className="text-lg m-">File Contents</label>
-        <pre className="output flex flex-wrap">{output}</pre>
+        <pre className="output relative">
+          {loader ? (
+            <div>
+              <span class="loader "></span>
+              <span className="verfiy">validating...</span>
+            </div>
+          ) : (
+            output
+          )}
+        </pre>
         <input
           className="p-3 w-11/12 m-auto my-10 rounded-full bg-blue-500 text-white"
           type="submit"

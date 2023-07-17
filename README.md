@@ -2,61 +2,44 @@
 
 ## Introduction
 
-A brief introduction of your project goes here. You may want to cover the purpose of your project, its core functionality, and what problems it solves.
+This is a company assignment given by zag. In this assignment there are 3 sections
+
+1. home section :- In Home section there are 3 pages landing, singleitem page,cart page. user can select and product for the landing page, after clicking any item user will redirect to details page of that item where user can see details about that product and select size of this choose.
+2. form section :- In form section there only landing page.
+3. Dashboard section:- In dashboard section there only landing page.
 
 ## Deplolyed App
 
-https://deployed-site.whatever
+https://zag-assign-roshan.netlify.app/
 
 ## Video Walkthrough of the project
 
 ## Features
 
-List out the key features of your application.
+features of application.
 
-- Feature 1
-- Feature 2
-- Feature 3
-
-## design decisions or assumptions
-
-List your design desissions & assumptions
+1. Selecting size of cloths.
+2. Updating cart by remove or adding item.
+3. Json validator
+4. Charts for easier visulization.
+5. pagenation
+6. filters
+7. searching
 
 ## Installation & Getting started
 
-Detailed instructions on how to install, configure, and get the project running.
-
 ```bash
-npm install my-project
-cd my-project
-npm start
+1. Clone the repo
+2. npm install zag
+3. npm start
 ```
-
-## Usage
-
-Provide instructions and examples on how to use your project.
-
-```bash
-# Example
-```
-
-Include screenshots as necessary.
-
-## APIs Used
-
-If your application relies on external APIs, document them and include any necessary links or references.
-
-## API Endpoints
-
-In case of Backend Applications provide a list of your API endpoints, methods, brief descriptions, and examples of request/response.
-GET /api/items - retrieve all items
-POST /api/items - create a new item
 
 ## Technology Stack
 
-List and provide a brief overview of the technologies used in the project.
-
-- Node.js
-- Express.js
-- MongoDB
-- Other libraries/modules
+- React.js
+- Javascript
+- Html
+- JSON
+- Css
+- Chart.js
+- Tailwind.css
