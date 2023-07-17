@@ -1,11 +1,21 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import CartItem from "./CartItem";
 import { NavLink } from "react-router-dom";
 import { Context } from "../context/Contextapi.js";
 
 export default function Cart({ cartarr }) {
   const { total, setTotal } = useContext(Context);
-  const [arr] = useState(cartarr);
+  const [arr, setArr] = useState(cartarr);
+
+  function deleteItemIncart(id, count, price) {
+    console.log(id);
+    setTotal(total - price * count);
+    let newarr = arr.filter((el, i) => {
+      if (i !== +id) return el;
+    });
+
+    setArr(newarr);
+  }
 
   return (
     <div className="cart">
@@ -45,9 +55,15 @@ export default function Cart({ cartarr }) {
         </svg>
       </div>
       <div className="cart-box">
-        {arr?.map((el) => {
-          return <CartItem data={el} key={el.id} />;
-        })}
+        {arr.length > 0 ? (
+          arr?.map((el, i) => {
+            return (
+              <CartItem data={el} del={deleteItemIncart} id={i} key={el.id} />
+            );
+          })
+        ) : (
+          <div className="text-2xl text-gray-300">Add Item in Cart</div>
+        )}
       </div>
       <div className="cart_payment">
         <input
@@ -65,7 +81,7 @@ export default function Cart({ cartarr }) {
         </div>
         <div>
           <span className="Price_spam">Shipping fee</span>
-          <span>INR 80 </span>
+          <span>INR 0.00 </span>
         </div>
         <hr className=" bg-gray-100" />
         <div>

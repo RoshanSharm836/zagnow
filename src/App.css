@@ -3,6 +3,9 @@ body {
   background: #f9f9f9;
   font-family: Inter;
 }
+input::placeholder {
+  text-align: center;
+}
 a {
   text-decoration: none;
 }
@@ -10,11 +13,28 @@ a {
 .container {
   width: 100%;
   display: grid;
-  margin-top: 50px;
   gap: 15px;
   grid-template-columns: repeat(3, 1fr);
+  padding: 0 15px;
 }
-
+.container img {
+  width: 161px;
+  height: 174px;
+  border-radius: 10px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 315px;
+  padding: 10px;
+  justify-content: space-around;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.card_title {
+  text-align: left;
+  font-weight: 600;
+}
 @media (max-width: 450px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
@@ -377,7 +397,7 @@ th {
 /* navbar */
 nav {
   position: fixed;
-  top: 0;
+  bottom: 0;
   text-transform: capitalize;
   left: 0;
   background-color: #fff;
@@ -417,5 +437,5 @@ nav {
 }
 /* pagenation end */
 .size:active {
-  background-color: #1b59f8;
+  background-color: #a7a7a7;
 }

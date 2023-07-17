@@ -2,18 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Context } from "../context/Contextapi.js";
 import { useContext } from "react";
 
-export default function CartItem({ data, key }) {
+export default function CartItem({ data, key, id, del }) {
   const [count, setCount] = useState(1);
   const { total, setTotal } = useContext(Context);
 
   // useEffect(() => {
   //   getamount();
   // }, [count]);
-
-  // function getamount() {
-  //   // setTotal(data.price * count);
-  //   // setTotal()
-  // }
 
   function counter(c) {
     if (c === "add") {
@@ -27,12 +22,15 @@ export default function CartItem({ data, key }) {
     }
   }
   return (
-    <div className="box" key={data.id}>
+    <div className="box my-5" key={data.id}>
       <img src={data.imgUrl} alt="img" />
       <div className="box_details">
-        <div className="flex ">
-          <div className="text-sm w-4/5">{data.title}</div>
+        <div className="flex justify-between">
+          <div className="text-sm text-left w-4/5">{data.title}</div>
           <svg
+            onClick={() => {
+              del(id, count, data.price);
+            }}
             xmlns="http://www.w3.org/2000/svg"
             width="26"
             height="26"
@@ -48,13 +46,14 @@ export default function CartItem({ data, key }) {
             />
           </svg>
         </div>
-        <div className="text-left" style={{ color: "#00000099" }}>
-          {data.selectsize}
+        <div className="text-left py-2" style={{ color: "#00000099" }}>
+          Size {data.selectsize}
         </div>
         <div className="box_price">
           <div>INR {data.price}</div>
           <div className="box_buttom">
             <button
+              className=" text-xl p-0"
               onClick={() => {
                 counter("sub");
               }}
@@ -64,7 +63,7 @@ export default function CartItem({ data, key }) {
             </button>
             <span>{count}</span>
             <button
-              className="btn btn-blue"
+              className="btn btn-blue text-xl p-0"
               onClick={() => {
                 counter("add");
               }}
