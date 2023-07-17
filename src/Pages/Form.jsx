@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import Popup from "../Component/Popup";
 
 export default function Form() {
   const [output, setOutput] = useState();
-  const [message, setMessage] = useState("");
+  const [Active, setActive] = useState(false);
   const [loader, setLoader] = useState(false);
   function handle(e) {
     setLoader(true);
@@ -17,13 +18,16 @@ export default function Form() {
           setLoader(false);
         }, 2000);
       } catch (error) {
-        setMessage("Invalid JSON file or format");
+        alert("Invalid JSON file or format");
       }
     };
   }
-
+  function handlesubmit(e) {
+    e.preventDefault();
+    setActive(true);
+  }
   return (
-    <div className="form w-11/12 m-auto">
+    <div className="form w-11/12 m-auto ">
       <div className="flex items-center gap-5 py-5 pfont-semibold">
         <NavLink to={`/`}>
           <svg
@@ -44,7 +48,7 @@ export default function Form() {
         </NavLink>
         <h1 className="text-xl font-semibold">Submit form</h1>
       </div>
-      <form>
+      <form onSubmit={handlesubmit}>
         <label className="text-lg m-">Full name</label>
         <input
           className="p-4 bg-gray-100"
@@ -69,6 +73,7 @@ export default function Form() {
           value="submit"
         />
       </form>
+      {Active ? <Popup setActive={setActive} setOutput={setOutput} /> : ""}
     </div>
   );
 }

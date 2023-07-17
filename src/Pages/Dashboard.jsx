@@ -1,6 +1,6 @@
 import React from "react";
-import List from "./List";
-import Piechart from "./Piechart";
+import List from "../Component/List";
+import Piechart from "../Component/Piechart";
 
 export default function Dashboard() {
   return (
@@ -50,18 +50,43 @@ export default function Dashboard() {
       </div>
 
       <div class="chart ">
-        <h1>All Customers</h1>
-        <div className="flex w-full justify-evenly">
-          <Piechart lable={"Current Customers"} />
-          <Piechart lable={"Current Customers"} />
-          <Piechart lable={"Current Customers"} />
-          <Piechart lable={"Current Customers"} />
+        <h1 className="text-xl font-semibold text-left p-3">All Customers</h1>
+        <div className="flex w-full justify-evenly ">
+          <Piechart
+            lable={"Current Customers"}
+            c={"#5F27CD"}
+            percentage={"85"}
+          />
+          <Piechart
+            lable={"Current Customers"}
+            c={"#16C098"}
+            percentage={"66"}
+          />
+          <Piechart
+            lable={"Current Customers"}
+            c={"#FF6B6B"}
+            percentage={"90"}
+          />
+          <Piechart
+            lable={"Current Customers"}
+            c={"#FFC5C5"}
+            percentage={"30"}
+          />
         </div>
       </div>
       <div class="second-chart flex">
-        <div>Stats Overview</div>
-        <div></div>
-        <div></div>
+        <h1 className="text-xl font-semibold text-left ">Stats Overview</h1>
+        <span>Active</span>
+        <hr
+          className="bar"
+          style={{ width: `${80}%`, backgroundColor: "#ffc5c5" }}
+        />
+        <span>Inactive</span>
+        <hr
+          className="bar"
+          style={{ width: `${60}%`, backgroundColor: "#00b087" }}
+        />
+        <hr />
       </div>
       <List />
     </div>

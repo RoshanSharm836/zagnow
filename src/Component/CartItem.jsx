@@ -1,19 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Context } from "../context/Contextapi.js";
+import { useContext } from "react";
 
-export default function CartItem({ data }) {
+export default function CartItem({ data, key }) {
   const [count, setCount] = useState(1);
+  const { total, setTotal } = useContext(Context);
 
-  function del(id) {
-    alert("del");
-    console.log("del", id);
-  }
+  // useEffect(() => {
+  //   getamount();
+  // }, [count]);
+
+  // function getamount() {
+  //   // setTotal(data.price * count);
+  //   // setTotal()
+  // }
+
   function counter(c) {
     if (c === "add") {
       setCount(count + 1);
+      // let currentItemTotal = count * data.price;
+      setTotal(total + data.price);
     } else {
       setCount(count - 1);
+      // let currentItemTotal = count * data.price;
+      setTotal(total - data.price);
     }
-    console.log("count", count);
   }
   return (
     <div className="box" key={data.id}>
@@ -22,9 +33,6 @@ export default function CartItem({ data }) {
         <div className="flex ">
           <div className="text-sm w-4/5">{data.title}</div>
           <svg
-            onClick={() => {
-              del(data.id);
-            }}
             xmlns="http://www.w3.org/2000/svg"
             width="26"
             height="26"
@@ -40,7 +48,9 @@ export default function CartItem({ data }) {
             />
           </svg>
         </div>
-        <div style={{ color: "#00000099" }}>M</div>
+        <div className="text-left" style={{ color: "#00000099" }}>
+          {data.selectsize}
+        </div>
         <div className="box_price">
           <div>INR {data.price}</div>
           <div className="box_buttom">

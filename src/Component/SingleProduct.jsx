@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
+import { Context } from "../context/Contextapi";
 export default function SingleProduct({ data, cartarr, setCartarr }) {
   const [product, setProduct] = useState({});
+  const { total, setTotal } = useContext(Context);
   const { id } = useParams();
 
   useEffect(() => {
@@ -19,13 +21,14 @@ export default function SingleProduct({ data, cartarr, setCartarr }) {
     });
   };
 
-  function handle() {
+  function handle(price) {
     setCartarr((old) => [...old, product]);
+    setTotal(total + price);
     alert("item added");
   }
 
   function addsize(size) {
-    console.log(size);
+    product.selectsize = size;
   }
 
   return (
@@ -79,7 +82,7 @@ export default function SingleProduct({ data, cartarr, setCartarr }) {
         </div>
         <button
           onClick={() => {
-            handle(id);
+            handle(product?.price || 0);
           }}
         >
           <span>🛒 </span>

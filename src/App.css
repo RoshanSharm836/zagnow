@@ -10,6 +10,7 @@ a {
 .container {
   width: 100%;
   display: grid;
+  margin-top: 50px;
   gap: 15px;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -132,6 +133,7 @@ form {
   display: flex;
   flex-direction: column;
   color: #00000099;
+  align-items: flex-start;
 }
 
 form input {
@@ -169,13 +171,44 @@ form input {
   margin: auto;
   border: 1px solid #00000099;
 }
+
+.popup {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 50%;
+  border-radius: 35px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+}
+
+.popup button {
+  width: 80%;
+  padding: 20px 0;
+  border-radius: 30px;
+}
+.popup > button:first-of-type {
+  background-color: #1b59f8;
+  color: #e9f0ff;
+}
+.popup > button:last-of-type {
+  color: #1b59f8;
+  background-color: #e9f0ff;
+  /* border-radius: 15px; */
+}
 /* form end */
 
 /* dashboard */
 .dashboard {
   width: 100%;
   display: grid;
-  grid-template-columns: 250px 1fr 1fr;
+  grid-template-columns: 250px 1.5fr 1fr;
   grid-template-rows: 100px 250px 1fr;
   gap: 15px;
   grid-auto-flow: row;
@@ -192,11 +225,15 @@ form input {
   margin-top: 30px;
   align-items: center;
   gap: 20px;
+  background: #fff;
+  box-shadow: 0px 10.220000267028809px 61.29999923706055px 0px
+    rgba(226, 236, 249, 0.5);
 }
 .fz {
   width: 80%;
   justify-content: flex-start;
-  margin-left: 60px;
+  border-radius: 10px;
+  padding-left: 30px !important;
 }
 .dashboard_header {
   grid-area: dashboard_header;
@@ -228,12 +265,26 @@ form input {
   box-shadow: 0px 10.220000267028809px 61.29999923706055px 0px
     rgba(226, 236, 249, 0.5);
 }
-
+.pielable {
+  color: #a7a7a7;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
 .second-chart {
   grid-area: second-chart;
   border-radius: 30.65px;
   border: 1px solid #eff0f6;
   background: #fff;
+  width: 80%;
   box-shadow: 0px 10.220000267028809px 61.29999923706055px 0px
     rgba(226, 236, 249, 0.5);
 }
@@ -244,7 +295,7 @@ form input {
 }
 .dashboard_list {
   grid-area: dashboard_list;
-  width: 80%;
+  width: 90%;
   padding: 20px;
 
   margin: auto;
@@ -256,11 +307,23 @@ form input {
 }
 .dashboard_list table {
   width: 100%;
+  font-family: Poppins;
+  color: #292d32;
+  font-family: Poppins;
+  font-size: 14.304px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.143px;
   padding: 10px;
 }
 thead > tr {
   color: #00000099;
   text-transform: capitalize;
+  border-bottom: 1px solid #a1999940;
+}
+tbody tr {
+  margin: 20px 0 !important;
 }
 tbody > tr,
 th {
@@ -270,12 +333,45 @@ th {
   width: 25%;
   padding: 10px;
 }
+.green {
+  background-color: #00b087;
+  border: 2px solid;
+  color: #008767;
+}
+.red {
+  background-color: #ffc5c5;
+  border: 2px solid #df0404;
+  color: #df0404;
+}
 .dashboard_left > div {
   padding: 10px 0;
 }
 .dashboard_left > div:hover {
   color: #1b59f8;
   background-color: #c7d3f3;
+}
+
+.second-chart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
+}
+
+.second-chart > span {
+  color: #a7a7a7;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.bar {
+  padding: 5px;
+  width: 80%;
+  background: aqua;
+  border-radius: 5px;
 }
 /* dashboard end */
 /* navbar */
@@ -320,3 +416,6 @@ nav {
   color: #fff;
 }
 /* pagenation end */
+.size:active {
+  background-color: #1b59f8;
+}

@@ -1,19 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CartItem from "./CartItem";
 import { NavLink } from "react-router-dom";
+import { Context } from "../context/Contextapi.js";
 
 export default function Cart({ cartarr }) {
-  const [total, settotal] = useState(0);
-  // console.log();
-  useEffect(() => {
-    console.log("cartarr", cartarr);
-    // displayData();
-  }, []);
-  // console.log("total", total);
-  // const displayData = () => {
-  //   let arr = JSON.parse(localStorage.getItem("cartItem")) || [];
-  //   setProduct(arr);
-  // };
+  const { total, setTotal } = useContext(Context);
+  const [arr] = useState(cartarr);
+
   return (
     <div className="cart">
       <div className="cart_header">
@@ -52,8 +45,8 @@ export default function Cart({ cartarr }) {
         </svg>
       </div>
       <div className="cart-box">
-        {cartarr?.map((el) => {
-          return <CartItem data={el} total={total} settotal={settotal} />;
+        {arr?.map((el) => {
+          return <CartItem data={el} key={el.id} />;
         })}
       </div>
       <div className="cart_payment">
