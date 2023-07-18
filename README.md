@@ -10,7 +10,7 @@ This is a company assignment given by Zagnow. In this assignment, there are 3 se
 
 ## Deployed App
 
-https://zag-assign-roshan.netlify.app/
+https://zagnow-roshan.netlify.app/
 
 ## video Walkthrough of the project
 
