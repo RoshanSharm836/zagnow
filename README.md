@@ -12,7 +12,7 @@ This is a company assignment given by Zagnow. In this assignment, there are 3 se
 
 https://zagnow-roshan.netlify.app/
 
-## video Walkthrough of the project
+## Video Walkthrough of the project
 
 https://github.com/Roshanrocked/zagnow/assets/113673793/f05f0ef3-a077-4eff-a027-7e6288a914f0
 
