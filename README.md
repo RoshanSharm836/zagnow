@@ -31,11 +31,12 @@ features of the application.
 
 ## Installation & Getting started
 
-```bash
-1. Clone the repo
-2. npm install zagnow
-3. npm start
-```
+To run the comment section locally, follow these steps:
+
+1. Clone the repository: git clone https://github.com/Roshanrocked/zagnow.git
+2. Install dependencies: npm install
+3. Start the development server: npm start
+4. Open the comment section in your browser: http://localhost:3000
 
 ## Technology Stack
 
