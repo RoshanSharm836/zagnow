@@ -10,7 +10,11 @@ This is a company assignment given by Zagnow. In this assignment, there are 3 se
 
 ## Deployed App
 
-https://zagnow-roshan.netlify.app/
+Home section deployed link:- https://zagnow-roshan.netlify.app/
+
+Form section deployed link:- https://zagnow-roshan.netlify.app/form
+
+Dashboard section deployed link:- https://zagnow-roshan.netlify.app/dashboard
 
 ## Video Walkthrough of the project
 
