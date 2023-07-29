@@ -3,7 +3,7 @@ import CartItem from "./CartItem";
 import { NavLink } from "react-router-dom";
 import { Context } from "../context/Contextapi.js";
 
-export default function Cart({ cartarr }) {
+export default function Cart({ cartarr, setCartarr }) {
   const { total, setTotal } = useContext(Context);
   const [arr, setArr] = useState(cartarr);
 
@@ -14,7 +14,8 @@ export default function Cart({ cartarr }) {
       if (i !== +id) return el;
     });
 
-    setArr(newarr);
+    setCartarr(newarr); // to delete item from cart array
+    setArr(newarr); // to delete item from cart page
   }
 
   return (

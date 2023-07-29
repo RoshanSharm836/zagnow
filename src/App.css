@@ -73,6 +73,13 @@ a {
     width: 100px;
     height: 100px;
   }
+  form {
+    width: 50% !important;
+    margin: auto;
+  }
+  .popup {
+    width: 30% !important;
+  }
 }
 @media (max-width: 450px) {
   .container {
@@ -181,6 +188,7 @@ a {
 .cart-box {
   display: flex;
   max-height: 30vh;
+  flex-direction: column;
   overflow-y: scroll;
 }
 .cart_payment div {
@@ -240,7 +248,7 @@ form input {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  width: 50%;
+  width: 80%;
   border-radius: 35px;
   position: absolute;
   top: 50%;

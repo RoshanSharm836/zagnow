@@ -14,6 +14,10 @@ https://zag-assign-roshan.netlify.app/
 
 ## Video Walkthrough of the project
 
+<video >
+<source src='play.mp4'type="video/mp4">
+</video>
+
 ## Features
 
 features of application.

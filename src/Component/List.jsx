@@ -19,7 +19,7 @@ export default function List() {
 
   function handlesort(e) {
     // filteing data
-    let data = datalist.filter((el) => {
+    const data = datalist.filter((el) => {
       if (el.new === e.target.value) {
         return el;
       }
@@ -75,7 +75,7 @@ export default function List() {
           />
           <select
             onChange={(e) => {
-              handlesort(e.target.value);
+              handlesort(e);
             }}
           >
             <option value="Newest">Newest</option>
